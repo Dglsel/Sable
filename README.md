@@ -21,9 +21,12 @@
   <img src="https://img.shields.io/badge/swift-6.0-black?style=flat-square" alt="Swift">
   <img src="https://img.shields.io/badge/ui-SwiftUI-black?style=flat-square" alt="SwiftUI">
   <img src="https://img.shields.io/badge/license-MIT-black?style=flat-square" alt="License">
+  <img src="https://img.shields.io/badge/status-early%20alpha-orange?style=flat-square" alt="Status">
 </p>
 
 ---
+
+> **Early Alpha** — Sable is under active development. Core features work but expect rough edges, UI bugs, and breaking changes. If you're okay with that, contributions are very welcome — there's plenty to fix and improve.
 
 Sable is a native macOS desktop application that serves as a unified cockpit for interacting with AI agents through the [OpenClaw](https://github.com/openclaw/openclaw) framework. Built entirely with SwiftUI and SwiftData — zero external dependencies.
 
@@ -156,11 +159,23 @@ Contributions are welcome. Here's how to get started:
 7. Push to the branch (`git push origin feature/amazing-feature`)
 8. Open a Pull Request
 
+### Known Issues
+
+This is an early alpha. Known bugs and rough edges include:
+
+- **Scroll behavior** — auto-scroll can be unreliable in long conversations; scroll-to-bottom button may not appear consistently
+- **Streaming edge cases** — typewriter animation occasionally fails to render, showing content all at once
+- **Conversation switching** — switching between conversations can sometimes cause blank content or stale state
+- **ThinkingIndicator** — may not display correctly after certain tool call sequences
+- **Settings UI** — some pickers don't refresh immediately after language switch
+- **Code blocks** — syntax highlighting is minimal (monochrome only, no language detection yet)
+
 ### Areas That Need Help
 
+- **Bug fixes** — see Known Issues above, all of these are open for PRs
 - **Unit tests** — test coverage is minimal, especially for services and parsing logic
 - **Accessibility** — VoiceOver support, keyboard navigation
-- **Performance** — LazyVStack optimization for very long conversations
+- **Performance** — LazyVStack optimization for very long conversations (1000+ messages)
 - **Localization** — additional language support beyond English and Chinese
 - **Code syntax highlighting** — monochrome weight/opacity-based differentiation
 
