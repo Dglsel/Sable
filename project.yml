@@ -1,0 +1,54 @@
+name: Sable
+options:
+  createIntermediateGroups: true
+settings:
+  base:
+    PRODUCT_NAME: Sable
+    PRODUCT_BUNDLE_IDENTIFIER: com.sable.app
+    MARKETING_VERSION: 0.1.0
+    CURRENT_PROJECT_VERSION: 1
+    SWIFT_VERSION: 6.0
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    GENERATE_INFOPLIST_FILE: YES
+    INFOPLIST_KEY_CFBundleDisplayName: Sable
+    INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
+    INFOPLIST_KEY_NSHumanReadableCopyright: "Copyright © 2026 Sable"
+targets:
+  Sable:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: Sable/App
+      - path: Sable/Features
+      - path: Sable/Core
+      - path: Sable/Services
+      - path: Sable/Resources
+        buildPhase: resources
+      - path: Sable/Preview Content
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.sable.app
+  SableTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: SableTests
+    dependencies:
+      - target: Sable
+    settings:
+      base:
+        PRODUCT_NAME: SableTests
+        PRODUCT_MODULE_NAME: SableTests
+        PRODUCT_BUNDLE_IDENTIFIER: com.sable.app.tests
+schemes:
+  Sable:
+    build:
+      targets:
+        Sable: all
+        SableTests: [test]
+    test:
+      targets:
+        - name: SableTests

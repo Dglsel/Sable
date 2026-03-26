@@ -1,0 +1,47 @@
+# Xcode
+*.xcodeproj/
+!*.xcodeproj/project.pbxproj
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+xcuserdata/
+DerivedData/
+build/
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Generated project (regenerate with: xcodegen generate)
+*.xcodeproj
+
+# Environment & secrets
+.env
+.env.*
+*.pem
+*.p12
+*.key
